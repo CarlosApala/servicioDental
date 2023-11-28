@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\ServiciosController;
+use App\Livewire\CreatePost;
+use App\Livewire\Pacientes;
+use App\Models\Servicios;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $serv=new ServiciosController();
+
+    $servicios=new Servicios();
+
+    $datos=$serv->show($servicios);
+    
+    return view('welcome',compact('datos'));
 });
+
 
 Route::middleware([
     'auth:sanctum',
@@ -24,5 +34,9 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');
+    })->name('dashboard')->middleware('authorization');
+    Route::get('/pacientes',Pacientes::class)->name('livewire.pacientes')->middleware('authorization');  
 });
+
+
+
