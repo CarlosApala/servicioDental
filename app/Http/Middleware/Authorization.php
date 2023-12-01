@@ -16,24 +16,8 @@ class Authorization
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    /* public function handle(Request $request, Closure $next): Response
     {
-        /* dd($request->session()->getId()); */
-        $usuarios=new UserController();
-        $sesion=new SessionController();
-
-        //id de usuario logeado
-        $id=$request->session()->getId();
-
-        //sesion iniciado
-        $valor=$sesion->show($id);
         
-        $roles=new RolesUsuarioController();
-
-        $roles->show($valor->user_id);
-
-        
-
-        return $next($request);
-    }
+           } */
 }

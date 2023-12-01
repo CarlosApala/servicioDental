@@ -16,6 +16,25 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('livewire.servicios') }}" :active="request()->routeIs('livewire.servicios')">
+                        {{ __('Servicios') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('livewire.pacientes') }}" :active="request()->routeIs('livewire.pacientes')">
+                        {{ __('Pacientes') }}
+                    </x-nav-link>
+                </div>
+                @can('livewire.medicos.index')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('livewire.medicos') }}" :active="request()->routeIs('livewire.pacientes')">
+                        {{ __('Medicos') }}
+                    </x-nav-link>
+                </div>        
+                @endcan
+                
+                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">

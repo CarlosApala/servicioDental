@@ -10,4 +10,6 @@ class Servicios extends Model
     use HasFactory;
     
     protected $table='servicios';
+
+    protected $fillable=["id","nombre","descripcion","tarifa", "updated_at", "created_at","estado"];
 }

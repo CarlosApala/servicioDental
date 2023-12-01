@@ -19,7 +19,7 @@ class MedicosSeeder extends Seeder
     public function run(): void
     {
         
-        $medico1=RolesUsuario::where('role_id','5')->first()->user_id;
+        /* $medico1=RolesUsuario::where('role_id','5')->first()->user_id;
         $medico2=RolesUsuario::where('role_id','5')->first()->user_id;
         $medico3=RolesUsuario::where('role_id','5')->first()->user_id;
         $medico4=RolesUsuario::where('role_id','5')->first()->user_id;
@@ -54,7 +54,7 @@ class MedicosSeeder extends Seeder
             'user_id'=>$medico1,
             'especialidad'=>'odontologo',
             'nLicencia'=>fake()->randomNumber,
-        ]);
+        ]); */
 
     }
 }

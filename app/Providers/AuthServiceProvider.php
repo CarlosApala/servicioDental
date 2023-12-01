@@ -3,6 +3,12 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+
+use App\Models\Roles;
+use App\Models\Servicios;
+use App\Models\User;
+use App\Policies\ServiciosPolicy;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -14,6 +20,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         //
+        Servicios::class=>ServiciosPolicy::class,
     ];
 
     /**
@@ -22,6 +29,10 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        
+/* 
+        Gate::define('update-services',function (Roles $roles, Servicios $servicios){
+            return $roles->nombre==="administrador";
+        });
+         */
     }
 }
