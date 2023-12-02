@@ -13,7 +13,7 @@
 
         <!-- Scripts -->
         <link rel="stylesheet" href="assets/app.css">
-    <script src="assets/app.js" defer></script>
+        <script src="assets/app.js" defer></script>
 
         <!-- Styles -->
         @livewireStyles
