@@ -20,7 +20,7 @@ class CreateMedicos extends Component
     public $user_id;
     public function mount($myArray){
         
-
+        /* dd($myArray); */
         $this->titulo=empty($myArray['titulo'])?"Registrar Medico":$myArray['titulo'];
         $this->id=empty($myArray['id'])?"":$myArray['id'];
         $this->name=empty($myArray['name'])?"":$myArray['name'];
@@ -39,8 +39,6 @@ class CreateMedicos extends Component
     }
     public function save(){
 
-        $resultados=auth()->user();
-
         $servicios=new MedicoController();
 
         $creado=([
@@ -56,13 +54,12 @@ class CreateMedicos extends Component
         ]);
                 
         if($servicios->create($creado)){
-            return redirect()->route('dashboard');
+            return redirect()->route('livewire.medicos');
         }
         
     }
     public function update(){
-        $resultados=auth()->user();
-
+        
         $servicios=new MedicoController();
         
         
@@ -79,6 +76,7 @@ class CreateMedicos extends Component
         ];
                 
         if($servicios->update($this->id,$creado)){
+
             return redirect()->route('livewire.medicos');
         }
     }

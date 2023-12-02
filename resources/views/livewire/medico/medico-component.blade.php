@@ -6,8 +6,9 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
               <button class="btn btn-primary my-1" wire:click="showMedicos">Inicio</button>                 
+              @can('livewire.medicos.create')
               <button class="btn btn-primary my-1" wire:click="createMedicos">Crear</button>
-              
+              @endcan
           </ul>
         </div>
       </nav>

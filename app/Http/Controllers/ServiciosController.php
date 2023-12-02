@@ -32,7 +32,6 @@ class ServiciosController extends Controller
     {
         //
         
-        $roles=new RolesUsuarioController();
         $user=Auth::user();
         
         if(!$this->authorize('create',$servicios)){
@@ -51,9 +50,19 @@ class ServiciosController extends Controller
      */
     public function show()
     {
-        $servicios=new Servicios();
-        
-        return $servicios::all();
+        $datos=[];
+        if(auth()->check()){
+            $datos= Servicios::when(auth()->user()->hasRole('Admin'),function($query){
+            
+            })->when(auth()->user()->hasRole('medico'),function($query){
+                $query->where('estado',false);
+            })->get();
+        }else{
+            
+            $datos=Servicios::where('estado',false)->get();
+        }
+
+        return $datos;
     }
 
     /**

@@ -17,6 +17,11 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('/') }}" :active="request()->routeIs('livewire.servicios')">
+                        {{ __('Ver Pagina') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('livewire.servicios') }}" :active="request()->routeIs('livewire.servicios')">
                         {{ __('Servicios') }}
                     </x-nav-link>

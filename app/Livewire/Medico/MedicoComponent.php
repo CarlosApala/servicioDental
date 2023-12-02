@@ -19,9 +19,13 @@ class MedicoComponent extends Component
     #[On('changeMainMedico')]
     public function cambiarMain($datos){
         $this->componentMain=$datos[0];
+
         
         if($this->componentMain==="createMedicos"){
-            $this->updateData=$datos[1];
+
+            
+            $this->updateData=[...$datos[1],...['titulo'=>$datos['titulo']]];
+            /* dd($this->updateData); */
         }
     }
 

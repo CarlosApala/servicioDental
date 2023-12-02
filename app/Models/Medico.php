@@ -10,5 +10,9 @@ class Medico extends Model
     protected $table='medico';
     protected $fillable=['user_id','especialidad','nLicencia','estado'];
     use HasFactory;
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
     
 }

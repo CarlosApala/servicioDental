@@ -29,12 +29,9 @@
                     <a class="nav-link" href="#servicios">Servicios</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" >
+                    <a class="nav-link" href="{{url('/profesionales')}}" role="button" >
                       Profesionales
                     </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-disabled="true">Productos</a>
                   </li>
             </ul>
             @if (Route::has('login'))

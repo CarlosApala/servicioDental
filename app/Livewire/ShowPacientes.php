@@ -27,6 +27,7 @@ class ShowPacientes extends Component
                 $datos[]='createPacientes';
                 $datos[]=$element;
                 $datos[]="Actualizar Pacientes";
+                
                 $this->dispatch('changeMainPaciente',$datos);
 
 

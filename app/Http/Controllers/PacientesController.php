@@ -47,7 +47,11 @@ class PacientesController extends Controller
      */
     public function show()
     {
-        $pacientes=Paciente::all();
+        $pacientes=Paciente::when(auth()->user()->hasRole('Admin'),function($query){
+            
+        })->when(auth()->user()->hasRole('medico'),function($query){
+            $query->where('estado',false);
+        })->get();
         return $pacientes;
     }
 

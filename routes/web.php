@@ -21,10 +21,18 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     $serv=new ServiciosController();
-    $datos=$serv->show()->where('estado',false);
+    $dt=$serv->show();
+    $datos=$dt->where('estado',false);
+    
     return view('welcome',compact('datos'));
 })->name('/');
-
+Route::get('/profesionales', function () {
+    $medico=new MedicoController();
+    $datos=$medico->showMedicos()->where('estado',false);
+    
+    
+    return view('profesionales',compact('datos'));
+})->name('profesionales');
 
 Route::middleware([
     'auth:sanctum',
