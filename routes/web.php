@@ -39,8 +39,7 @@ Route::middleware([
     Route::get('/servicios',ServiciosComponent::class)->name('livewire.servicios');
     Route::get('/pacientes',PacientesComponent::class)->name('livewire.pacientes');
     Route::get('/medicos',MedicoComponent::class)->name('livewire.medicos');
-/*     Route::get('/servicios',ServiciosComponent::class)->name('livewire.servicios');
-    Route::get('/pacientes',PacientesComponent::class)->name('livewire.pacientes')->middleware('authorization');   */
+
 });
 
 
