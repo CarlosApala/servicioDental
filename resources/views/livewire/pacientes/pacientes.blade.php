@@ -14,7 +14,8 @@
       </div>
     </nav>
     <!-- Contenido principal -->
-    <main class="col-md-9">
+    <main class="col-md-9 text-center">
+      <h3 class="mb-4"><strong>Pacientes</strong></h3>
       @if ($componentMain==="showPacientes")
       
         <livewire:show-pacientes />

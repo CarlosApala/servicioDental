@@ -13,7 +13,8 @@
         </div>
       </nav>
       <!-- Contenido principal -->
-      <main class="col-md-9">
+      <main class="col-md-9 text-center">
+        <h3 class="mb-4"><strong>Medicos</strong> </h3>
         @if ($componentMain==="showMedicos")
           <livewire:medico.show-medicos />
         @elseif ($componentMain==="createMedicos")      

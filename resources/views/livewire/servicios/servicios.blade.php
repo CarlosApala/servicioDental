@@ -1,7 +1,9 @@
 
 
  <div class="container-fluid" >
+  
   <div class="row" >
+    
     <!-- Navbar lateral -->
     <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar m" >
       <div class="sidebar-sticky">
@@ -13,7 +15,9 @@
       </div>
     </nav>
     <!-- Contenido principal -->
-    <main class="col-md-9">
+    
+    <main class="col-md-9 text-center">
+      <h3 class="mb-4"><strong>Servicios</strong> </h3>
       @if ($componentMain==="showServicios")
         <livewire:show-services />
       @elseif ($componentMain==="createServicios")      
